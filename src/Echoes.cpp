@@ -64,12 +64,13 @@ int Echoes::setupCore()
     return 0;
 }
 
-bool Echoes::isPkgToInstallExists()
+bool Echoes::isPkgToInstallExists(string option)
 {
+    cout << "Package to install : " << option << endl;
     return false;
 }
 
-bool Echoes::isPkgToSearchExists()
+bool Echoes::isPkgToSearchExists(string option)
 {
     return false;
 }

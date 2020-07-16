@@ -15,15 +15,18 @@ int main(int argc, char *argv[])
 {
     // Initializing echoes Echoes object
     Echoes *echoes = new Echoes(argv);
-    string option = "";
     
     // Get the name of the program
     string pkgName = echoes->getEchoesName();
     
     /* Basic debug string used during development. 
-     * Uncomment to use this input.
+     * Uncomment to use this input.*/
     cout << "DEBUG ARGS -> " << argc << endl;
-    */
+    //*/
+    
+    // Get the arguments to run.
+    string argument = "";
+    string option = "";
     
     // Checking if argc values are correct.
     if (argc == 1)
@@ -32,9 +35,27 @@ int main(int argc, char *argv[])
         echoes->showHelp();
         return -1;
     }
+    else if (argc == 2)
+    {
+        argument = echoes->getArg();
+        
+        // Checking values of argument input.
+        if(argument == "info")
+            echoes->showInfo();
+        else if(argument == "help")
+            echoes->showHelp();
+        else if (argument == "installcore")
+            echoes->setupCore();
+        else
+        {
+            cerr << "Erreur: Invalid input" << endl;
+            echoes->showHelp();
+        }
+    }
     else if (argc >= 3)
     {
         // Get the options to eventually run.
+        argument = echoes->getArg();
         option = echoes->getOpt();
         if(option == "")
         {
@@ -42,70 +63,63 @@ int main(int argc, char *argv[])
             return -1;
         }
         /* Basic debug string used during development. 
-         * Uncomment to use this input.
+         * Uncomment to use this input.*/
         else
         {
             cout << "DEBUG OPTION : " << option << endl;
-        }*/
+            
+            if(argument == "")
+            {
+                cerr << "Error: invalid arg" << endl;
+                return -1;
+            }
+            /* Basic debug string used during development. 
+            * Uncomment to use this input.*/
+            else
+            {
+                cout << "DEBUG ARGUMENT : " << argument << endl;
+            }
+            //*/
+            
+            if (argument == "install")
+            {
+                if(option != "")
+                {
+                    cout << "INSTALL EXIST " << endl;
+                    echoes->isPkgToInstallExists(option);
+                }
+                else
+                {
+                    cerr << "Erreur 1" << endl;
+                    return -1;
+                }
+            }
+            else if (argument == "search")
+            {
+                if(option != "")
+                {
+                    cout << "SEARCH EXIST " << endl;
+                    echoes->isPkgToSearchExists(option);
+                }
+                else
+                {
+                    cerr << "Erreur 2" << endl;
+                    return -1;
+                }
+            }
+            else 
+            {
+                cerr << "Error: Invalid input" << endl;
+                echoes->showHelp();
+            }
+        }//*/
     }
-    else 
+    else if (argc >= 4)
     {
-        // Get the arguments to run.
-        string argument = echoes->getArg();
-        if(argument == "")
-        {
-            cerr << "Error: invalid arg" << endl;
-            return -1;
-        }
-        /* Basic debug string used during development. 
-         * Uncomment to use this input.
-        else
-        {
-            cout << "DEBUG ARGUMENT : " << argument << endl;
-        }
-        */
-        
-        // Checking values of argument input.
-        if(argument == "info")
-        {
-            echoes->showInfo();
-        }
-        else if(argument == "help")
-            echoes->showHelp();
-        else if (argument == "installcore")
-        {
-            echoes->setupCore();
-        }
-        else if (argument == "install")
-        {
-            if(option != "")
-            {
-                cout << "INSTALL EXIST ?" << endl;
-                echoes->isPkgToInstallExists();
-            }
-            else
-            {
-                cerr << "Erreur 1" << endl;
-                return -1;
-            }
-        }
-        else if (argument == "search")
-        {
-            if(option != "")
-            {
-                cout << "SEARCH EXIST ?" << endl;
-                echoes->isPkgToSearchExists();
-            }
-            else
-            {
-                cerr << "Erreur 2" << endl;
-                return -1;
-            }
-        }
-        else 
-            echoes->showHelp();
+        cerr << "Error: Too much arguments for " << pkgName << endl;
+        return -1;
     }
-    
+        
     // Freeing memory and deleting pointer.
     delete echoes;
     echoes = 0;

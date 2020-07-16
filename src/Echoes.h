@@ -38,8 +38,8 @@ public:
     char* getOpt() const;
     std::string getEchoesName() const;
     int setupCore();
-    bool isPkgToInstallExists();
-    bool isPkgToSearchExists();
+    bool isPkgToInstallExists(std::string option);
+    bool isPkgToSearchExists(std::string option);
     
 private:
     std::string echoesVer;
