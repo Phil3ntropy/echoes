@@ -1,0 +1,13 @@
+INSTALL ECHOES
+
+1 - Using make:
+---------------
+Go to src and run: 'make'
+
+2 - Using command-line and GCC:
+-------------------------------
+Go to src and run: 'g++ -Wall Echoes.cpp Echoes.h main.cpp -o echoes'
+
+And......
+...........
+It's done.
