@@ -1,0 +1,7 @@
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/install/strip.dir
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/install/local.dir
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/install.dir
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/list_install_components.dir
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/rebuild_cache.dir
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/edit_cache.dir
+/home/weltrusten/philentropy/echoes/src/build/CMakeFiles/echoes.dir

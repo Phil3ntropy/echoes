@@ -25,10 +25,17 @@
 #define ECHOES_HEADER
 #include <iostream>
 #include <string>
+#include <vector>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <errno.h>
+// Echoes headers
+#include "Installer.h"
 
 class Echoes 
 {
 public:
+    Echoes();
     Echoes(char* argv[]);
     ~Echoes();
     
@@ -37,9 +44,6 @@ public:
     char* getArg() const;
     char* getOpt() const;
     std::string getEchoesName() const;
-    int setupCore();
-    bool isPkgToInstallExists(std::string option);
-    bool isPkgToSearchExists(std::string option);
     
 private:
     std::string echoesVer;

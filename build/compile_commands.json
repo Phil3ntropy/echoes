@@ -1,0 +1,19 @@
+[
+{
+  "directory": "/home/weltrusten/philentropy/echoes/build",
+  "command": "/bin/g++    -g   -o CMakeFiles/echoes.dir/src/main.cpp.o -c /home/weltrusten/philentropy/echoes/src/main.cpp",
+  "file": "/home/weltrusten/philentropy/echoes/src/main.cpp"
+},
+
+{
+  "directory": "/home/weltrusten/philentropy/echoes/build",
+  "command": "/bin/g++    -g   -o CMakeFiles/echoes.dir/src/Installer.cpp.o -c /home/weltrusten/philentropy/echoes/src/Installer.cpp",
+  "file": "/home/weltrusten/philentropy/echoes/src/Installer.cpp"
+},
+
+{
+  "directory": "/home/weltrusten/philentropy/echoes/build",
+  "command": "/bin/g++    -g   -o CMakeFiles/echoes.dir/src/Echoes.cpp.o -c /home/weltrusten/philentropy/echoes/src/Echoes.cpp",
+  "file": "/home/weltrusten/philentropy/echoes/src/Echoes.cpp"
+}
+]

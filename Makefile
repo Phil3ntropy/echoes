@@ -68,10 +68,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/weltrusten/philentropy/echoes/src
+CMAKE_SOURCE_DIR = /home/weltrusten/philentropy/echoes
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/weltrusten/philentropy/echoes/src
+CMAKE_BINARY_DIR = /home/weltrusten/philentropy/echoes
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -146,9 +146,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/weltrusten/philentropy/echoes/src/CMakeFiles /home/weltrusten/philentropy/echoes/src/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/weltrusten/philentropy/echoes/CMakeFiles /home/weltrusten/philentropy/echoes/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/weltrusten/philentropy/echoes/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/weltrusten/philentropy/echoes/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -189,86 +189,86 @@ echoes/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/build
 .PHONY : echoes/fast
 
-Echoes.o: Echoes.cpp.o
+src/Echoes.o: src/Echoes.cpp.o
 
-.PHONY : Echoes.o
-
-# target to build an object file
-Echoes.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/Echoes.cpp.o
-.PHONY : Echoes.cpp.o
-
-Echoes.i: Echoes.cpp.i
-
-.PHONY : Echoes.i
-
-# target to preprocess a source file
-Echoes.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/Echoes.cpp.i
-.PHONY : Echoes.cpp.i
-
-Echoes.s: Echoes.cpp.s
-
-.PHONY : Echoes.s
-
-# target to generate assembly for a file
-Echoes.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/Echoes.cpp.s
-.PHONY : Echoes.cpp.s
-
-Installer.o: Installer.cpp.o
-
-.PHONY : Installer.o
+.PHONY : src/Echoes.o
 
 # target to build an object file
-Installer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/Installer.cpp.o
-.PHONY : Installer.cpp.o
+src/Echoes.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/Echoes.cpp.o
+.PHONY : src/Echoes.cpp.o
 
-Installer.i: Installer.cpp.i
+src/Echoes.i: src/Echoes.cpp.i
 
-.PHONY : Installer.i
+.PHONY : src/Echoes.i
 
 # target to preprocess a source file
-Installer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/Installer.cpp.i
-.PHONY : Installer.cpp.i
+src/Echoes.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/Echoes.cpp.i
+.PHONY : src/Echoes.cpp.i
 
-Installer.s: Installer.cpp.s
+src/Echoes.s: src/Echoes.cpp.s
 
-.PHONY : Installer.s
+.PHONY : src/Echoes.s
 
 # target to generate assembly for a file
-Installer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/Installer.cpp.s
-.PHONY : Installer.cpp.s
+src/Echoes.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/Echoes.cpp.s
+.PHONY : src/Echoes.cpp.s
 
-main.o: main.cpp.o
+src/Installer.o: src/Installer.cpp.o
 
-.PHONY : main.o
+.PHONY : src/Installer.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/Installer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/Installer.cpp.o
+.PHONY : src/Installer.cpp.o
 
-main.i: main.cpp.i
+src/Installer.i: src/Installer.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Installer.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Installer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/Installer.cpp.i
+.PHONY : src/Installer.cpp.i
 
-main.s: main.cpp.s
+src/Installer.s: src/Installer.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Installer.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Installer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/Installer.cpp.s
+.PHONY : src/Installer.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echoes.dir/build.make CMakeFiles/echoes.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -283,15 +283,15 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... echoes"
-	@echo "... Echoes.o"
-	@echo "... Echoes.i"
-	@echo "... Echoes.s"
-	@echo "... Installer.o"
-	@echo "... Installer.i"
-	@echo "... Installer.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/Echoes.o"
+	@echo "... src/Echoes.i"
+	@echo "... src/Echoes.s"
+	@echo "... src/Installer.o"
+	@echo "... src/Installer.i"
+	@echo "... src/Installer.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

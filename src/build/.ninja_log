@@ -1,0 +1,6 @@
+# ninja log v5
+3	460	1595811442828939785	CMakeFiles/echoes.dir/Echoes.cpp.o	6eee441a16404c69
+0	251	1595811866223733377	CMakeFiles/echoes.dir/Installer.cpp.o	7be8ce6043fd1a42
+0	214	1595811733280996128	CMakeFiles/echoes.dir/main.cpp.o	490e602c55396869
+0	201	1595811892317289253	CMakeFiles/echoes.dir/Echoes.cpp.o	6eee441a16404c69
+201	252	1595811892368288385	echoes	52fccba6037b67

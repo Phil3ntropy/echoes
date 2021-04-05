@@ -10,18 +10,23 @@
 
 using namespace std;
 
-Echoes::Echoes(char* argv[])
+
+Echoes::Echoes()
 {
-    // Initializing private members used by Echoes.
+    //npkPath = "/.npk/scripts/";
+}
+
+Echoes::Echoes(char* argv[]) : arg(argv[1]), opt(argv[2]), echoesVer("0.1.0"), name("echoes")
+{
+    /* Initializing private members used by Echoes.
     arg = argv[1];
     opt = argv[2];
     echoesVer = "0.1.0";
-    name = "echoes";
+    name = "echoes";*/
 }
 
 Echoes::~Echoes()
 {
-    
 }
 
 void Echoes::showHelp() const
@@ -33,6 +38,7 @@ void Echoes::showHelp() const
     cout << "installcore : Install Core packages of Entropyx Linux." << endl;
     cout << "install pkg : Install the given pkg." << endl;
     cout << "search pkg : Search if pkg exists in repositories." << endl;
+    cout << "check-pkg pkg : Check Echoes package pkg." << endl;
 }
 
 void Echoes::showInfo() const
@@ -56,21 +62,4 @@ char* Echoes::getOpt() const
 string Echoes::getEchoesName() const
 {
     return name;
-}
-
-int Echoes::setupCore()
-{
-    cout << "SETUP CORE" << endl;
-    return 0;
-}
-
-bool Echoes::isPkgToInstallExists(string option)
-{
-    cout << "Package to install : " << option << endl;
-    return false;
-}
-
-bool Echoes::isPkgToSearchExists(string option)
-{
-    return false;
 }

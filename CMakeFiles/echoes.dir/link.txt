@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/echoes.dir/src/main.cpp.o CMakeFiles/echoes.dir/src/Installer.cpp.o CMakeFiles/echoes.dir/src/Echoes.cpp.o  -o echoes 

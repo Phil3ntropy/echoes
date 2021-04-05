@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include "Installer.h"
 #include "Echoes.h"
 
 using namespace std;
@@ -15,13 +16,14 @@ int main(int argc, char *argv[])
 {
     // Initializing echoes Echoes object
     Echoes *echoes = new Echoes(argv);
+    Installer *eInstall = new Installer;
     
     // Get the name of the program
     string pkgName = echoes->getEchoesName();
     
     /* Basic debug string used during development. 
      * Uncomment to use this input.*/
-    cout << "DEBUG ARGS -> " << argc << endl;
+    //cout << "DEBUG ARGS -> " << argc << endl;
     //*/
     
     // Get the arguments to run.
@@ -45,7 +47,8 @@ int main(int argc, char *argv[])
         else if(argument == "help")
             echoes->showHelp();
         else if (argument == "installcore")
-            echoes->setupCore();
+            //echoes->setupCore();
+            echoes->showInfo();
         else
         {
             cerr << "Erreur: Invalid input" << endl;
@@ -66,7 +69,7 @@ int main(int argc, char *argv[])
          * Uncomment to use this input.*/
         else
         {
-            cout << "DEBUG OPTION : " << option << endl;
+            //cout << "DEBUG OPTION : " << option << endl;
             
             if(argument == "")
             {
@@ -74,32 +77,37 @@ int main(int argc, char *argv[])
                 return -1;
             }
             /* Basic debug string used during development. 
-            * Uncomment to use this input.*/
+            * Uncomment to use this input.
             else
             {
                 cout << "DEBUG ARGUMENT : " << argument << endl;
             }
-            //*/
+            */
             
             if (argument == "install")
             {
-                if(option != "")
-                {
-                    cout << "INSTALL EXIST " << endl;
-                    echoes->isPkgToInstallExists(option);
-                }
+                if(getuid() != 0)
+                    cout << "This option need root permissions. Use su or sudo." << endl;
                 else
                 {
-                    cerr << "Erreur 1" << endl;
-                    return -1;
+                    if(option != "")
+                    {
+                        //cout << "INSTALL EXIST " << endl;
+                        eInstall->installPkg(option);                    
+                    }
+                    else
+                    {
+                        cerr << "Erreur 1" << endl;
+                        return -1;
+                    }
                 }
             }
             else if (argument == "search")
             {
                 if(option != "")
                 {
-                    cout << "SEARCH EXIST " << endl;
-                    echoes->isPkgToSearchExists(option);
+                    //cout << "SEARCH EXIST " << endl;
+                    eInstall->searchPkg(option);
                 }
                 else
                 {
@@ -107,12 +115,16 @@ int main(int argc, char *argv[])
                     return -1;
                 }
             }
+            else if (argument == "check-pkg")
+            {
+                //echoes->checkEchoesPkg(option);
+            }
             else 
             {
                 cerr << "Error: Invalid input" << endl;
                 echoes->showHelp();
             }
-        }//*/
+        }
     }
     else if (argc >= 4)
     {

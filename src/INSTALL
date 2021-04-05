@@ -8,6 +8,10 @@ Go to src and run: 'make'
 -------------------------------
 Go to src and run: 'g++ -Wall Echoes.cpp Echoes.h main.cpp -o echoes'
 
+3 - Creating libs:
+g++ -c -Wall -Werror -fpic Echoes.cpp
+g++ -shared -o libechoes.so Echoes.o
+
 And......
 ...........
 It's done.
